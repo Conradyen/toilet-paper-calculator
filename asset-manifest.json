@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/toilet-paper-calculater/static/css/main.c890569a.chunk.css",
-    "main.js": "/toilet-paper-calculater/static/js/main.6821b0ff.chunk.js",
-    "main.js.map": "/toilet-paper-calculater/static/js/main.6821b0ff.chunk.js.map",
-    "runtime-main.js": "/toilet-paper-calculater/static/js/runtime-main.40b7b18a.js",
-    "runtime-main.js.map": "/toilet-paper-calculater/static/js/runtime-main.40b7b18a.js.map",
-    "static/js/2.d6b3f122.chunk.js": "/toilet-paper-calculater/static/js/2.d6b3f122.chunk.js",
-    "static/js/2.d6b3f122.chunk.js.map": "/toilet-paper-calculater/static/js/2.d6b3f122.chunk.js.map",
-    "index.html": "/toilet-paper-calculater/index.html",
-    "precache-manifest.3a4e6fe0b09cd0b0d2fbe769eadae43c.js": "/toilet-paper-calculater/precache-manifest.3a4e6fe0b09cd0b0d2fbe769eadae43c.js",
-    "service-worker.js": "/toilet-paper-calculater/service-worker.js",
-    "static/css/main.c890569a.chunk.css.map": "/toilet-paper-calculater/static/css/main.c890569a.chunk.css.map",
-    "static/js/2.d6b3f122.chunk.js.LICENSE.txt": "/toilet-paper-calculater/static/js/2.d6b3f122.chunk.js.LICENSE.txt"
+    "main.css": "/toilet-paper-calculator/static/css/main.c890569a.chunk.css",
+    "main.js": "/toilet-paper-calculator/static/js/main.ca4a07a2.chunk.js",
+    "main.js.map": "/toilet-paper-calculator/static/js/main.ca4a07a2.chunk.js.map",
+    "runtime-main.js": "/toilet-paper-calculator/static/js/runtime-main.637c48d1.js",
+    "runtime-main.js.map": "/toilet-paper-calculator/static/js/runtime-main.637c48d1.js.map",
+    "static/js/2.d6b3f122.chunk.js": "/toilet-paper-calculator/static/js/2.d6b3f122.chunk.js",
+    "static/js/2.d6b3f122.chunk.js.map": "/toilet-paper-calculator/static/js/2.d6b3f122.chunk.js.map",
+    "index.html": "/toilet-paper-calculator/index.html",
+    "precache-manifest.a86a60f3404ae57eaf8dbacc3775d2e6.js": "/toilet-paper-calculator/precache-manifest.a86a60f3404ae57eaf8dbacc3775d2e6.js",
+    "service-worker.js": "/toilet-paper-calculator/service-worker.js",
+    "static/css/main.c890569a.chunk.css.map": "/toilet-paper-calculator/static/css/main.c890569a.chunk.css.map",
+    "static/js/2.d6b3f122.chunk.js.LICENSE.txt": "/toilet-paper-calculator/static/js/2.d6b3f122.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.40b7b18a.js",
+    "static/js/runtime-main.637c48d1.js",
     "static/js/2.d6b3f122.chunk.js",
     "static/css/main.c890569a.chunk.css",
-    "static/js/main.6821b0ff.chunk.js"
+    "static/js/main.ca4a07a2.chunk.js"
   ]
 }
