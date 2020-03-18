@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/toilet-paper-calculator/static/css/main.c890569a.chunk.css",
-    "main.js": "/toilet-paper-calculator/static/js/main.570de0c4.chunk.js",
-    "main.js.map": "/toilet-paper-calculator/static/js/main.570de0c4.chunk.js.map",
+    "main.js": "/toilet-paper-calculator/static/js/main.9a85968c.chunk.js",
+    "main.js.map": "/toilet-paper-calculator/static/js/main.9a85968c.chunk.js.map",
     "runtime-main.js": "/toilet-paper-calculator/static/js/runtime-main.637c48d1.js",
     "runtime-main.js.map": "/toilet-paper-calculator/static/js/runtime-main.637c48d1.js.map",
-    "static/js/2.94730cb8.chunk.js": "/toilet-paper-calculator/static/js/2.94730cb8.chunk.js",
-    "static/js/2.94730cb8.chunk.js.map": "/toilet-paper-calculator/static/js/2.94730cb8.chunk.js.map",
+    "static/js/2.b3194785.chunk.js": "/toilet-paper-calculator/static/js/2.b3194785.chunk.js",
+    "static/js/2.b3194785.chunk.js.map": "/toilet-paper-calculator/static/js/2.b3194785.chunk.js.map",
     "index.html": "/toilet-paper-calculator/index.html",
-    "precache-manifest.5f536cf1d2b467804d30b5eb5b6ab28e.js": "/toilet-paper-calculator/precache-manifest.5f536cf1d2b467804d30b5eb5b6ab28e.js",
+    "precache-manifest.be5c2418b580312c495321e81e7f3bfa.js": "/toilet-paper-calculator/precache-manifest.be5c2418b580312c495321e81e7f3bfa.js",
     "service-worker.js": "/toilet-paper-calculator/service-worker.js",
     "static/css/main.c890569a.chunk.css.map": "/toilet-paper-calculator/static/css/main.c890569a.chunk.css.map",
-    "static/js/2.94730cb8.chunk.js.LICENSE.txt": "/toilet-paper-calculator/static/js/2.94730cb8.chunk.js.LICENSE.txt"
+    "static/js/2.b3194785.chunk.js.LICENSE.txt": "/toilet-paper-calculator/static/js/2.b3194785.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.637c48d1.js",
-    "static/js/2.94730cb8.chunk.js",
+    "static/js/2.b3194785.chunk.js",
     "static/css/main.c890569a.chunk.css",
-    "static/js/main.570de0c4.chunk.js"
+    "static/js/main.9a85968c.chunk.js"
   ]
 }
