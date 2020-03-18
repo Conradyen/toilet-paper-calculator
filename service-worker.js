@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/toilet-paper-calculator/precache-manifest.cf6cdcc43d26cd81b953b1eaaa26a672.js"
+  "/toilet-paper-calculator/precache-manifest.890c07d7ad7fdc80ff05034294e12759.js"
 );
 
 self.addEventListener('message', (event) => {
