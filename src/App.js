@@ -7,6 +7,7 @@ import Typography from "@material-ui/core/Typography";
 import Tooltip from "@material-ui/core/Tooltip";
 import Slider from "@material-ui/core/Slider";
 import { makeStyles } from "@material-ui/core/styles";
+import FormHelperText from "@material-ui/core/FormHelperText";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faToiletPaper,
@@ -24,17 +25,17 @@ import Footer from "./Footer";
 const ICONCOLOR = "#1554e8";
 const useStyles = makeStyles({
   SlidingBar: {
-    width: "90%",
+    width: "80%",
     padding: "1px",
     textAlign: "center",
     verticalAlign: "middle",
-    margin: "1px"
+    margin: "auto"
   },
   smallItem: {
     padding: "1px"
   },
   formControl: {
-    width: "80%",
+    minWidth: "150px",
     margin: "10px"
   },
   App: {
@@ -42,6 +43,9 @@ const useStyles = makeStyles({
   },
   details: {
     margin: "20px"
+  },
+  innerdiv: {
+    textAlign: "center"
   }
 });
 
@@ -174,148 +178,122 @@ function App() {
           )}
         </Typography>
       </div>
-      <Grid container justify="center" spacing={1} alignContent="center">
-        <Grid item xs={2} sm={6}>
-          <Paper className={classes.SlidingBar}>
-            <Typography id="continuous-slider" gutterBottom>
-              {"Currently at "}
-              {numRoll}
-              {" rolls of toilet paper"}
-            </Typography>
-            <Grid container spacing={2} alignItems="center">
-              <Grid item>
-                <FontAwesomeIcon
-                  className={classes.smallItem}
-                  icon={faToiletPaper}
-                  color={ICONCOLOR}
-                  size="2x"
-                />
-              </Grid>
-              <Grid item xs>
-                <Slider
-                  value={numRoll}
-                  onChange={handleRollChange}
-                  ValueLabelComponent={ValueLabelComponent}
-                  aria-labelledby="continuous-slider"
-                />
-              </Grid>
-              <Grid item>
-                <FontAwesomeIcon
-                  icon={faToiletPaper}
-                  color={ICONCOLOR}
-                  size="4x"
-                />
-              </Grid>
-            </Grid>
-            <Typography id="continuous-slider" gutterBottom>
-              {"Currently at "}
-              {numbottle}
-              {" bottles of toilet paper"}
-            </Typography>
-            <Grid container spacing={2} alignItems="center">
-              <Grid item>
-                <FontAwesomeIcon
-                  className={classes.smallItem}
-                  icon={faWineBottle}
-                  color={ICONCOLOR}
-                  size="2x"
-                />
-              </Grid>
-              <Grid item xs>
-                <Slider
-                  value={numbottle}
-                  onChange={handleBottleChange}
-                  ValueLabelComponent={ValueLabelComponent}
-                  aria-labelledby="continuous-slider"
-                />
-              </Grid>
-              <Grid item>
-                <FontAwesomeIcon
-                  icon={faWineBottle}
-                  color={ICONCOLOR}
-                  size="4x"
-                />
-              </Grid>
-            </Grid>
-            <Typography id="continuous-slider" gutterBottom>
-              {"You own "}
-              {numMask} {" masks."}
-            </Typography>
-            <Grid container spacing={2} alignItems="center">
-              <Grid item>
-                <FontAwesomeIcon
-                  className={classes.smallItem}
-                  icon={faMask}
-                  color={ICONCOLOR}
-                  size="2x"
-                />
-              </Grid>
-              <Grid item xs>
-                <Slider
-                  value={numMask}
-                  onChange={handleMaskChange}
-                  ValueLabelComponent={ValueLabelComponent}
-                  aria-labelledby="continuous-slider"
-                />
-              </Grid>
-              <Grid item>
-                <FontAwesomeIcon icon={faMask} color={ICONCOLOR} size="4x" />
-              </Grid>
-            </Grid>
-          </Paper>
-        </Grid>
+      <div className={classes.innerdiv}>
+        <FormControl className={classes.formControl}>
+          <InputLabel id="demo-simple-select-label">Times to toilet</InputLabel>
+          <Select
+            labelId="demo-simple-select-label"
+            id="demo-simple-select"
+            value={useRoll}
+            onChange={handleuseRollChange}
+          >
+            {[...Array(10)].map((index, key) => (
+              <MenuItem value={key}>{key}</MenuItem>
+            ))}
+          </Select>
+          <FormHelperText>per day</FormHelperText>
+        </FormControl>
+        <FormControl className={classes.formControl}>
+          <InputLabel id="demo-simple-select-label">Liter of water</InputLabel>
+          <Select
+            labelId="demo-simple-select-label"
+            id="demo-simple-select"
+            value={usebottle}
+            onChange={handleuseBottleChange}
+          >
+            {[...Array(10)].map((index, key) => (
+              <MenuItem value={key}>{key}</MenuItem>
+            ))}
+          </Select>
+          <FormHelperText>per day</FormHelperText>
+        </FormControl>
+        <FormControl className={classes.formControl}>
+          <InputLabel id="demo-simple-select-label">Mask</InputLabel>
+          <Select
+            labelId="demo-simple-select-label"
+            id="demo-simple-select"
+            value={useMask}
+            onChange={handleuseMaskChange}
+          >
+            {[...Array(10)].map((index, key) => (
+              <MenuItem value={key}>{key}</MenuItem>
+            ))}
+          </Select>
+          <FormHelperText>per day</FormHelperText>
+        </FormControl>
+      </div>
 
-        <Grid item xs={2} sm={3}>
-          <Paper className={classes.SlidingBar}>
-            <Typography>Advance Settings</Typography>
-            <FormControl className={classes.formControl}>
-              <InputLabel id="demo-simple-select-label">
-                Times to toilet pre day
-              </InputLabel>
-              <Select
-                labelId="demo-simple-select-label"
-                id="demo-simple-select"
-                value={useRoll}
-                onChange={handleuseRollChange}
-              >
-                {[...Array(10)].map((index, key) => (
-                  <MenuItem value={key}>{key}</MenuItem>
-                ))}
-              </Select>
-            </FormControl>
-            <FormControl className={classes.formControl}>
-              <InputLabel id="demo-simple-select-label">
-                Liter of water per day
-              </InputLabel>
-              <Select
-                labelId="demo-simple-select-label"
-                id="demo-simple-select"
-                value={usebottle}
-                onChange={handleuseBottleChange}
-              >
-                {[...Array(10)].map((index, key) => (
-                  <MenuItem value={key}>{key}</MenuItem>
-                ))}
-              </Select>
-            </FormControl>
-            <FormControl className={classes.formControl}>
-              <InputLabel id="demo-simple-select-label">
-                Mask per day
-              </InputLabel>
-              <Select
-                labelId="demo-simple-select-label"
-                id="demo-simple-select"
-                value={useMask}
-                onChange={handleuseMaskChange}
-              >
-                {[...Array(10)].map((index, key) => (
-                  <MenuItem value={key}>{key}</MenuItem>
-                ))}
-              </Select>
-            </FormControl>
-          </Paper>
+      <Paper className={classes.SlidingBar} elevation={0}>
+        <Typography id="continuous-slider" gutterBottom>
+          {"Currently at "}
+          {numRoll}
+          {" rolls of toilet paper"}
+        </Typography>
+        <Grid container spacing={2} alignItems="center">
+          <Grid item>
+            <FontAwesomeIcon
+              className={classes.smallItem}
+              icon={faToiletPaper}
+              color={ICONCOLOR}
+              size="2x"
+            />
+          </Grid>
+          <Grid item xs>
+            <Slider
+              value={numRoll}
+              onChange={handleRollChange}
+              ValueLabelComponent={ValueLabelComponent}
+              aria-labelledby="continuous-slider"
+            />
+          </Grid>
         </Grid>
-      </Grid>
+        <Typography id="continuous-slider" gutterBottom>
+          {"Currently at "}
+          {numbottle}
+          {" bottles of toilet paper"}
+        </Typography>
+        <Grid container spacing={2} alignItems="center">
+          <Grid item>
+            <FontAwesomeIcon
+              className={classes.smallItem}
+              icon={faWineBottle}
+              color={ICONCOLOR}
+              size="2x"
+            />
+          </Grid>
+          <Grid item xs>
+            <Slider
+              value={numbottle}
+              onChange={handleBottleChange}
+              ValueLabelComponent={ValueLabelComponent}
+              aria-labelledby="continuous-slider"
+            />
+          </Grid>
+        </Grid>
+        <Typography id="continuous-slider" gutterBottom>
+          {"You own "}
+          {numMask} {" masks."}
+        </Typography>
+        <Grid container spacing={2} alignItems="center">
+          <Grid item>
+            <FontAwesomeIcon
+              className={classes.smallItem}
+              icon={faMask}
+              color={ICONCOLOR}
+              size="2x"
+            />
+          </Grid>
+          <Grid item xs>
+            <Slider
+              value={numMask}
+              onChange={handleMaskChange}
+              ValueLabelComponent={ValueLabelComponent}
+              aria-labelledby="continuous-slider"
+            />
+          </Grid>
+        </Grid>
+      </Paper>
+
       <Footer />
     </div>
   );

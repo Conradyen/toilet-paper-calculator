@@ -17,7 +17,8 @@ const footerStyle = {
   marginTop: "20px",
   color: "#797777",
   backgroundColor: "#414141",
-  textAlign: "center"
+  textAlign: "center",
+  width: "100%"
 };
 
 const pStyle = {
