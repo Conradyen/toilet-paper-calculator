@@ -35,7 +35,7 @@ const useStyles = makeStyles({
     padding: "1px"
   },
   formControl: {
-    minWidth: "150px",
+    minWidth: "120px",
     margin: "10px"
   },
   App: {
@@ -46,6 +46,9 @@ const useStyles = makeStyles({
   },
   innerdiv: {
     textAlign: "center"
+  },
+  grid: {
+    margin: "auto"
   }
 });
 
@@ -84,6 +87,7 @@ function App() {
   const [useRoll, setuseRolls] = useState(5);
   const [numbottle, setBottle] = useState(10);
   const [usebottle, setuseBottle] = useState(5);
+  const [bottleVol, setBottleVol] = useState(500);
   const [numMask, setnumMask] = useState(7);
   const [useMask, setuseMask] = useState(7);
 
@@ -101,6 +105,9 @@ function App() {
   const handleuseBottleChange = (event, newValue) => {
     setuseBottle(event.target.value);
   };
+  const handleBottleVolChange = (event, newValue) => {
+    setBottleVol(event.target.value);
+  };
 
   const handleMaskChange = (event, newValue) => {
     setnumMask(newValue);
@@ -117,7 +124,7 @@ function App() {
 
   const calsulateRemainDayOfBottle = (numbottle, usebottle) => {
     //55 ml per bottle
-    return Math.floor((numbottle * 550) / (1000 * usebottle));
+    return Math.floor((numbottle * bottleVol) / (1000 * usebottle));
   };
   const calsulateRemainDayOfMask = (numMask, useMask) => {
     return Math.floor(numMask / useMask);
@@ -178,58 +185,13 @@ function App() {
           )}
         </Typography>
       </div>
-      <div className={classes.innerdiv}>
-        <FormControl className={classes.formControl}>
-          <InputLabel id="demo-simple-select-label">Times to toilet</InputLabel>
-          <Select
-            labelId="demo-simple-select-label"
-            id="demo-simple-select"
-            value={useRoll}
-            onChange={handleuseRollChange}
-          >
-            {[...Array(10)].map((index, key) => (
-              <MenuItem value={key}>{key}</MenuItem>
-            ))}
-          </Select>
-          <FormHelperText>per day</FormHelperText>
-        </FormControl>
-        <FormControl className={classes.formControl}>
-          <InputLabel id="demo-simple-select-label">Liter of water</InputLabel>
-          <Select
-            labelId="demo-simple-select-label"
-            id="demo-simple-select"
-            value={usebottle}
-            onChange={handleuseBottleChange}
-          >
-            {[...Array(10)].map((index, key) => (
-              <MenuItem value={key}>{key}</MenuItem>
-            ))}
-          </Select>
-          <FormHelperText>per day</FormHelperText>
-        </FormControl>
-        <FormControl className={classes.formControl}>
-          <InputLabel id="demo-simple-select-label">Mask</InputLabel>
-          <Select
-            labelId="demo-simple-select-label"
-            id="demo-simple-select"
-            value={useMask}
-            onChange={handleuseMaskChange}
-          >
-            {[...Array(10)].map((index, key) => (
-              <MenuItem value={key}>{key}</MenuItem>
-            ))}
-          </Select>
-          <FormHelperText>per day</FormHelperText>
-        </FormControl>
-      </div>
-
       <Paper className={classes.SlidingBar} elevation={0}>
         <Typography id="continuous-slider" gutterBottom>
           {"Currently at "}
           {numRoll}
           {" rolls of toilet paper"}
         </Typography>
-        <Grid container spacing={2} alignItems="center">
+        <Grid container spacing={2} alignItems="center" justify="center">
           <Grid item>
             <FontAwesomeIcon
               className={classes.smallItem}
@@ -238,7 +200,7 @@ function App() {
               size="2x"
             />
           </Grid>
-          <Grid item xs>
+          <Grid item xs={4}>
             <Slider
               value={numRoll}
               onChange={handleRollChange}
@@ -246,13 +208,33 @@ function App() {
               aria-labelledby="continuous-slider"
             />
           </Grid>
+          <Grid item>
+            <FormControl className={classes.formControl}>
+              <InputLabel id="demo-simple-select-label">
+                Times to toilet
+              </InputLabel>
+              <Select
+                labelId="demo-simple-select-label"
+                id="demo-simple-select"
+                value={useRoll}
+                onChange={handleuseRollChange}
+              >
+                {[...Array(10)].map((index, key) => (
+                  <MenuItem value={key}>{key}</MenuItem>
+                ))}
+              </Select>
+              <FormHelperText>per day</FormHelperText>
+            </FormControl>
+          </Grid>
         </Grid>
+      </Paper>
+      <Paper className={classes.SlidingBar} elevation={0}>
         <Typography id="continuous-slider" gutterBottom>
           {"Currently at "}
           {numbottle}
-          {" bottles of toilet paper"}
+          {" bottles of water"}
         </Typography>
-        <Grid container spacing={2} alignItems="center">
+        <Grid container spacing={2} alignItems="center" justify="center">
           <Grid item>
             <FontAwesomeIcon
               className={classes.smallItem}
@@ -261,7 +243,7 @@ function App() {
               size="2x"
             />
           </Grid>
-          <Grid item xs>
+          <Grid item xs={4}>
             <Slider
               value={numbottle}
               onChange={handleBottleChange}
@@ -269,12 +251,51 @@ function App() {
               aria-labelledby="continuous-slider"
             />
           </Grid>
+          <Grid item>
+            <FormControl className={classes.formControl}>
+              <InputLabel id="demo-simple-select-label">
+                Liter of water
+              </InputLabel>
+              <Select
+                labelId="demo-simple-select-label"
+                id="demo-simple-select"
+                value={usebottle}
+                onChange={handleuseBottleChange}
+              >
+                {[...Array(10)].map((index, key) => (
+                  <MenuItem value={key}>{key}</MenuItem>
+                ))}
+              </Select>
+              <FormHelperText>per day</FormHelperText>
+            </FormControl>
+          </Grid>
+          <Grid item>
+            <FormControl className={classes.formControl}>
+              <InputLabel id="demo-simple-select-label">
+                Volume of bottle
+              </InputLabel>
+              <Select
+                labelId="demo-simple-select-label"
+                id="demo-simple-select"
+                value={bottleVol}
+                onChange={handleBottleVolChange}
+              >
+                <MenuItem value={500}>500</MenuItem>
+                <MenuItem value={550}>550</MenuItem>
+                <MenuItem value={700}>700</MenuItem>
+                <MenuItem value={1000}>1000</MenuItem>
+              </Select>
+              <FormHelperText>milliliter</FormHelperText>
+            </FormControl>
+          </Grid>
         </Grid>
+      </Paper>
+      <Paper className={classes.SlidingBar} elevation={0}>
         <Typography id="continuous-slider" gutterBottom>
           {"You own "}
           {numMask} {" masks."}
         </Typography>
-        <Grid container spacing={2} alignItems="center">
+        <Grid container spacing={2} alignItems="center" justify="center">
           <Grid item>
             <FontAwesomeIcon
               className={classes.smallItem}
@@ -283,7 +304,7 @@ function App() {
               size="2x"
             />
           </Grid>
-          <Grid item xs>
+          <Grid item xs={4}>
             <Slider
               value={numMask}
               onChange={handleMaskChange}
@@ -291,9 +312,24 @@ function App() {
               aria-labelledby="continuous-slider"
             />
           </Grid>
+          <Grid item>
+            <FormControl className={classes.formControl}>
+              <InputLabel id="demo-simple-select-label">Mask</InputLabel>
+              <Select
+                labelId="demo-simple-select-label"
+                id="demo-simple-select"
+                value={useMask}
+                onChange={handleuseMaskChange}
+              >
+                {[...Array(10)].map((index, key) => (
+                  <MenuItem value={key}>{key}</MenuItem>
+                ))}
+              </Select>
+              <FormHelperText>per day</FormHelperText>
+            </FormControl>
+          </Grid>
         </Grid>
       </Paper>
-
       <Footer />
     </div>
   );

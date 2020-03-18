@@ -5,7 +5,7 @@ export default class Footer extends Component {
     return (
       <footer style={footerStyle}>
         <p style={pStyle}>
-          Data are calculate on my personal experience result may varies.
+          Data are calculated based on my personal experience result may vary.
         </p>
         <p style={pStyle}>&copy;Ming-Hsuan Yen, 2020</p>
       </footer>
